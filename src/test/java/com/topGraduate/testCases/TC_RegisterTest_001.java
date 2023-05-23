@@ -4,6 +4,8 @@ import java.io.IOException;
 
 import org.junit.Assert;
 import org.testng.annotations.Test;
+
+import com.topGraduate.pageObjects.EmployerRegistrationPage;
 import com.topGraduate.pageObjects.LandingPage;
 import com.topGraduate.pageObjects.RegisterPage;
 
@@ -31,6 +33,9 @@ public class TC_RegisterTest_001 extends BaseClass
 		
 		RegisterPage rp = new RegisterPage(driver);
 		rp.openEmplRegisterPage();
+		
+		EmployerRegistrationPage regpage = new EmployerRegistrationPage(driver);
+		regpage.CreateEmployerAccount("Keshav","K","keshav.r@gmail.com" ,"Keshav@111" );
 		
 		
 	}

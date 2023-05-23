@@ -3,13 +3,14 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.topGraduate.testCases.TC_LandingTest_001">
+      <class name="com.topGraduate.testCases.TC_RegisterTest_001">
         <methods>
           <include name="setup"/>
-          <include name="landingTest"/>
+          <include name="Verify_Employer_Register_Page_Display"/>
+          <include name="Verify_Employer_Registration_with_ValidData"/>
           <include name="tearDown"/>
         </methods>
-      </class> <!-- com.topGraduate.testCases.TC_LandingTest_001 -->
+      </class> <!-- com.topGraduate.testCases.TC_RegisterTest_001 -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
