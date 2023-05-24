@@ -1,16 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
-  <test thread-count="5" name="Default test(failed)">
+<suite name="Failed suite [TopGraduateV1]" guice-stage="DEVELOPMENT">
+  <listeners>
+    <listener class-name="com.topGraduate.testCases.Listeners"/>
+  </listeners>
+  <test thread-count="5" name="TopGraduate WebApp Test(failed)">
+    <parameter name="browser" value="chrome"/>
     <classes>
       <class name="com.topGraduate.testCases.TC_RegisterTest_001">
         <methods>
           <include name="setup"/>
-          <include name="Verify_Employer_Register_Page_Display"/>
+          <include name="Verify_Resend_Email_Functionality"/>
           <include name="Verify_Employer_Registration_with_ValidData"/>
-          <include name="tearDown"/>
         </methods>
       </class> <!-- com.topGraduate.testCases.TC_RegisterTest_001 -->
     </classes>
-  </test> <!-- Default test(failed) -->
-</suite> <!-- Failed suite [Default suite] -->
+  </test> <!-- TopGraduate WebApp Test(failed) -->
+</suite> <!-- Failed suite [TopGraduateV1] -->

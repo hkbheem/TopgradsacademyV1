@@ -10,7 +10,8 @@
       <class name="com.topGraduate.testCases.TC_RegisterTest_001">
         <methods>
           <include name="setup"/>
-          <include name="landingTest"/>
+          <include name="Verify_Resend_Email_Functionality"/>
+          <include name="Verify_Employer_Registration_with_ValidData"/>
         </methods>
       </class> <!-- com.topGraduate.testCases.TC_RegisterTest_001 -->
     </classes>

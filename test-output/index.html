@@ -25,7 +25,7 @@
       <span class="top-banner-title-font">Test results</span>
       <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 1 failed test</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -39,7 +39,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" panel-name="suite-TopGraduateV1" class="navigator-link">
-              <span class="suite-name border-passed">TopGraduateV1</span>
+              <span class="suite-name border-failed">TopGraduateV1</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -92,7 +92,21 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">2 methods,   2 passed</span>
+                    <span class="method-stats">3 methods, 1 failed,   2 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-TopGraduateV1" class="hide-methods failed suite-TopGraduateV1"> (hide)</a> <!-- hide-methods failed suite-TopGraduateV1 -->
+                      <a href="#" panel-name="suite-TopGraduateV1" class="show-methods failed suite-TopGraduateV1"> (show)</a> <!-- show-methods failed suite-TopGraduateV1 -->
+                    </span>
+                    <div class="method-list-content failed suite-TopGraduateV1">
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-TopGraduateV1" title="com.topGraduate.testCases.TC_RegisterTest_001" class="method navigator-link" hash-for-method="Verify_Resend_Email_Functionality">Verify_Resend_Email_Functionality</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-TopGraduateV1 -->
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -123,6 +137,27 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-TopGraduateV1" class="panel TopGraduateV1">
+          <div class="suite-TopGraduateV1-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">com.topGraduate.testCases.TC_RegisterTest_001</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="Verify_Resend_Email_Functionality">
+                  </a> <!-- Verify_Resend_Email_Functionality -->
+                  <span class="method-name">Verify_Resend_Email_Functionality</span>
+                  <div class="stack-trace">java.lang.AssertionError: expected [Mail Sent Successfully] but found []
+	at com.topGraduate.pageObjects.EmployerRegistrationPage.ResendEmail(EmployerRegistrationPage.java:97)
+	at com.topGraduate.testCases.TC_RegisterTest_001.Verify_Resend_Email_Functionality(TC_RegisterTest_001.java:48)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 33 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-TopGraduateV1-class-failed -->
           <div class="suite-TopGraduateV1-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
@@ -201,20 +236,24 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(2);
+data.addRows(3);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'Verify_Employer_Registration_with_ValidData')
 data.setCell(0, 2, 'com.topGraduate.testCases.TC_RegisterTest_001')
-data.setCell(0, 3, 1705);
+data.setCell(0, 3, 4889);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'Verify_Employer_Register_Page_Display')
+data.setCell(1, 1, 'Verify_Resend_Email_Functionality')
 data.setCell(1, 2, 'com.topGraduate.testCases.TC_RegisterTest_001')
-data.setCell(1, 3, 1032);
+data.setCell(1, 3, 3158);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'Verify_Employer_Register_Page_Display')
+data.setCell(2, 2, 'com.topGraduate.testCases.TC_RegisterTest_001')
+data.setCell(2, 3, 1197);
 window.suiteTableData['TopGraduateV1']= { tableData: data, tableDiv: 'times-div-TopGraduateV1'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 2 seconds</span>
+              <span class="suite-total-time">Total running time: 9 seconds</span>
               <div id="times-div-TopGraduateV1">
               </div> <!-- times-div-TopGraduateV1 -->
             </div> <!-- times-div -->
@@ -247,16 +286,18 @@ return data;
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <span class="method-name">Verify_Employer_Register_Page_Display</span>
-                <span class="method-start">18897 ms</span>
+                <span class="method-start">11029 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">Verify_Employer_Registration_with_ValidData</span>
-                <span class="method-start">19943 ms</span>
+                <span class="method-start">12250 ms</span>
               </div> <!-- test-method -->
-              <div class="configuration-class after">
-                <span class="method-name">tearDown</span>
-                <span class="method-start">21652 ms</span>
-              </div> <!-- configuration-class after -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">Verify_Resend_Email_Functionality</span>
+                <span class="method-start">17151 ms</span>
+              </div> <!-- test-method -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
       </div> <!-- main-panel-root -->

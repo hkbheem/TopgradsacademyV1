@@ -5,6 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
+import org.testng.Assert;
 
 import com.topGraduate.testCases.BaseClass;
 
@@ -55,12 +56,25 @@ public class EmployerRegistrationPage extends BaseClass
 	@FindBy(xpath="//a[@class='btn btn-blue home_btns']")
 	WebElement createAccountbutton;
 	
-	public void CreateEmployerAccount(String firstname, String lastname, String emailaddress, String password)
+	@FindBy(xpath="//div[@class='confirm-text text-center']/h1")
+	WebElement registrationSuccessMsg;
+	
+	@FindBy(xpath="//div[@class='resend-btn mt-3']/button")
+	WebElement resendEmailbutton;
+	
+	@FindBy(xpath="//div[@class='cdk-overlay-container'][1]")
+	WebElement mailsentsuccessmsg;
+	
+	
+	
+	
+	public void CreateEmployerAccount(String firstname, String lastname, String emailaddress, String companyname, String password) throws InterruptedException
 	{
 		firstName.sendKeys(firstname);
 		lastName.sendKeys(lastname);
 		workEmailAddress.sendKeys(emailaddress);
 		confirmworkEmailAddress.sendKeys(emailaddress);
+		companyName.sendKeys(companyname);
 		industryDropdown.click();
 		Select s = new Select(industryDropdown);
 		s.selectByVisibleText("Information Technology");
@@ -68,8 +82,19 @@ public class EmployerRegistrationPage extends BaseClass
 		confirmpasswordfield.sendKeys(password);
 		agreeTermsandConditions.click();
 		createAccountbutton.click();
+		WaitForAnElementToAppear(registrationSuccessMsg);
+		String regsuccessmessage = registrationSuccessMsg.getText();
+		Assert.assertEquals(regsuccessmessage, "Registration success!");
+		Thread.sleep(2000);
 		
-		
+	}
+	
+	public void ResendEmail() throws InterruptedException
+	{
+		Thread.sleep(3000);
+		resendEmailbutton.click();
+		String mailSuccessMsg = mailsentsuccessmsg.getText();
+		Assert.assertEquals(mailSuccessMsg, "Mail Sent Successfully");
 	}
 	
 	

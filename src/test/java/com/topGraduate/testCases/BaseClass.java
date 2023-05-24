@@ -59,12 +59,12 @@ public class BaseClass {
 		
 	}
 	
-	@AfterClass
-	public void tearDown()
-	{
-		driver.quit();
-		
-	}
+//	@AfterClass
+//	public void tearDown()
+//	{
+//		driver.quit();
+//		
+//	}
 	
 	public String captureScreenshot(String tname, WebDriver driver) throws IOException
 	{
